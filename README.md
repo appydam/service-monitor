@@ -34,12 +34,14 @@ Dashboard will be available at `http://localhost:3000`
 
 ### Deploy to Render (One-Click)
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/appydam/service-monitor)
 
-1. Click the button above
-2. Connect your GitHub account
-3. Set environment variables (see Configuration below)
-4. Deploy!
+1. Click the button above (or manually: Render.com → New → Web Service → Connect `appydam/service-monitor`)
+2. Render will auto-detect `render.yaml` configuration
+3. Set environment variables: `CRYPTO_TRACKER_URL`, `PH_SCRAPER_URL`, `ALERT_WEBHOOK` (optional)
+4. Deploy! Your dashboard will be live at `https://service-monitor-xxxxx.onrender.com`
+
+📖 **Detailed deployment guide:** See [DEPLOY.md](./DEPLOY.md) for all platforms (Railway, Docker, etc.)
 
 ### Deploy with Docker
 

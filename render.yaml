@@ -2,10 +2,18 @@ services:
   - type: web
     name: service-monitor
     env: node
+    plan: free
     buildCommand: npm install
     startCommand: npm start
+    healthCheckPath: /
     envVars:
       - key: PORT
         value: 3000
       - key: NODE_ENV
         value: production
+      - key: CRYPTO_TRACKER_URL
+        sync: false  # User must provide
+      - key: PH_SCRAPER_URL
+        sync: false  # User must provide
+      - key: ALERT_WEBHOOK
+        sync: false  # Optional
