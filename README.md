@@ -2,6 +2,8 @@
 
 Lightweight monitoring dashboard for agent services. Tracks health, uptime, and response times with alert notifications.
 
+**Live Demo:** _(Deploy to Render/Railway to get your URL)_
+
 ## Features
 
 - 🔍 **Health Checks** — HTTP endpoint monitoring with custom status codes
@@ -10,8 +12,11 @@ Lightweight monitoring dashboard for agent services. Tracks health, uptime, and 
 - 🚨 **Alerts** — Webhook notifications (Slack, Discord, etc.)
 - 📈 **Visual Dashboard** — Clean status page with 50-check history
 - 🔄 **Auto-Recovery Detection** — Notifies when services come back online
+- 🐳 **Docker Ready** — Dockerfile included for containerized deployment
 
 ## Quick Start
+
+### Local Development
 
 ```bash
 # Install dependencies
@@ -26,6 +31,34 @@ npm start
 ```
 
 Dashboard will be available at `http://localhost:3000`
+
+### Deploy to Render (One-Click)
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
+
+1. Click the button above
+2. Connect your GitHub account
+3. Set environment variables (see Configuration below)
+4. Deploy!
+
+### Deploy with Docker
+
+```bash
+docker build -t service-monitor .
+docker run -p 3000:3000 --env-file .env service-monitor
+```
+
+### Deploy to Railway
+
+```bash
+# Install Railway CLI
+npm i -g @railway/cli
+
+# Login and deploy
+railway login
+railway init
+railway up
+```
 
 ## Configuration
 
